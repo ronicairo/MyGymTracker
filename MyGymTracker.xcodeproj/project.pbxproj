@@ -29,12 +29,58 @@
 		E0F8B4722EE89F74008758FD /* MyGymTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGymTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E0F8B45B2EE89F74008758FD /* MyGymTracker */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MyGymTracker;
-			sourceTree = "<group>";
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E0F8B4A72EE8A158008758FD /* Exceptions for "MyGymTracker" folder in "MyGymTracker" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				ContentView.swift,
+				Item.swift,
+				Models/Exercise.swift,
+				Models/Serie.swift,
+				Models/Session.swift,
+				Models/SessionExercise.swift,
+				MyGymTrackerApp.swift,
+				Views/Calendar/CalendarView.swift,
+				Views/Exercises/ExerciseFormView.swift,
+				Views/Exercises/ExerciseListView.swift,
+				Views/Sessions/ExerciseCardView.swift,
+				Views/Sessions/SerieCard.swift,
+				Views/Sessions/SessionDetailView.swift,
+				Views/Sessions/SessionExerciseRow.swift,
+				Views/Sessions/SessionFormView.swift,
+				Views/Sessions/SessionListView.swift,
+				"Views/View+SerieField.swift",
+			);
+			target = E0F8B4582EE89F74008758FD /* MyGymTracker */;
 		};
+		E0F8B4A82EE8A158008758FD /* Exceptions for "MyGymTracker" folder in "MyGymTrackerUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				ContentView.swift,
+				Item.swift,
+				Models/Exercise.swift,
+				Models/Serie.swift,
+				Models/Session.swift,
+				Models/SessionExercise.swift,
+				MyGymTrackerApp.swift,
+				Views/Calendar/CalendarView.swift,
+				Views/Exercises/ExerciseFormView.swift,
+				Views/Exercises/ExerciseListView.swift,
+				Views/Sessions/ExerciseCardView.swift,
+				Views/Sessions/SerieCard.swift,
+				Views/Sessions/SessionDetailView.swift,
+				Views/Sessions/SessionExerciseRow.swift,
+				Views/Sessions/SessionFormView.swift,
+				Views/Sessions/SessionListView.swift,
+				"Views/View+SerieField.swift",
+			);
+			target = E0F8B4712EE89F74008758FD /* MyGymTrackerUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		E0F8B46B2EE89F74008758FD /* MyGymTrackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MyGymTrackerTests;
@@ -43,6 +89,15 @@
 		E0F8B4752EE89F74008758FD /* MyGymTrackerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MyGymTrackerUITests;
+			sourceTree = "<group>";
+		};
+		E0F8B4A22EE8A158008758FD /* MyGymTracker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E0F8B4A72EE8A158008758FD /* Exceptions for "MyGymTracker" folder in "MyGymTracker" target */,
+				E0F8B4A82EE8A158008758FD /* Exceptions for "MyGymTracker" folder in "MyGymTrackerUITests" target */,
+			);
+			path = MyGymTracker;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,10 +130,10 @@
 		E0F8B4502EE89F74008758FD = {
 			isa = PBXGroup;
 			children = (
-				E0F8B45B2EE89F74008758FD /* MyGymTracker */,
 				E0F8B46B2EE89F74008758FD /* MyGymTrackerTests */,
 				E0F8B4752EE89F74008758FD /* MyGymTrackerUITests */,
 				E0F8B45A2EE89F74008758FD /* Products */,
+				E0F8B4A22EE8A158008758FD /* MyGymTracker */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,9 +161,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				E0F8B45B2EE89F74008758FD /* MyGymTracker */,
 			);
 			name = MyGymTracker;
 			packageProductDependencies = (
@@ -155,6 +207,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				E0F8B4752EE89F74008758FD /* MyGymTrackerUITests */,
+				E0F8B4A22EE8A158008758FD /* MyGymTracker */,
 			);
 			name = MyGymTrackerUITests;
 			packageProductDependencies = (
@@ -390,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49Y9N7XYJA;
@@ -434,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49Y9N7XYJA;
