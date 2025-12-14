@@ -13,19 +13,24 @@ struct SessionFormView: View {
     var body: some View {
         NavigationView {
             Form {
-                // 📅 Date
-                Section("Date") {
-                    DatePicker("Date", selection: $session.date, displayedComponents: .date)
+                Section("Infos") {
+                    // 🆕 Si c'est un modèle, on demande le NOM. Sinon la DATE.
+                    if session.isTemplate {
+                        TextField("Nom du modèle (ex: Pectoraux)", text: $session.name)
+                            .font(.headline)
+                    } else {
+                        DatePicker("Date", selection: $session.date, displayedComponents: .date)
+                    }
+                    
+                    TextField("Notes", text: $session.notes)
                 }
 
-                // 🏋️ Exercices
                 Section("Exercices") {
                     if session.exercises.isEmpty {
-                        Text("Aucun exercice ajouté")
+                        Text("Ajoutez vos exercices types ici")
                             .foregroundStyle(.secondary)
                             .italic()
                     } else {
-                        // On boucle directement sur les objets SessionExercise
                         ForEach(session.exercises) { sessionExercise in
                             SessionExerciseRow(sessionExercise: sessionExercise,
                                                exercises: exercises)
@@ -41,61 +46,33 @@ struct SessionFormView: View {
                     }
                 }
             }
-            .navigationTitle(isNew ? "Nouvelle séance" : "Modifier séance")
+            .navigationTitle(session.isTemplate ? "Éditer le modèle" : (isNew ? "Nouvelle séance" : "Modifier séance"))
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Enregistrer") {
-                        save()
-                    }
+                    Button("Enregistrer") { dismiss() }
                 }
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Annuler") {
-                        cancel()
-                    }
+                    Button("Annuler") { cancel() }
                 }
             }
             .onAppear {
-                // 💡 CRUCIAL : Si c'est une nouvelle session, on l'insère tout de suite
-                // pour que SwiftData gère correctement les relations avec les exercices.
-                if isNew {
-                    context.insert(session)
-                }
+                if isNew { context.insert(session) }
             }
         }
     }
 
-    // MARK: - Actions
-
     private func addExercise() {
-        guard let firstExercise = exercises.first else { return }
-        
-        let newSessionExercise = SessionExercise(exercise: firstExercise)
-        
-        // Comme 'session' est déjà dans le contexte (grâce au .onAppear),
-        // l'ajout se fait proprement sans casser les liens.
-        withAnimation {
-            session.exercises.append(newSessionExercise)
-        }
+        guard let first = exercises.first else { return }
+        let newSessionExercise = SessionExercise(exercise: first)
+        withAnimation { session.exercises.append(newSessionExercise) }
     }
 
     private func deleteExercise(at offsets: IndexSet) {
-        withAnimation {
-            session.exercises.remove(atOffsets: offsets)
-        }
-    }
-
-    private func save() {
-        // Rien de spécial à faire, SwiftData a déjà tout enregistré en temps réel.
-        // On ferme juste la vue.
-        dismiss()
+        withAnimation { session.exercises.remove(atOffsets: offsets) }
     }
 
     private func cancel() {
-        // Si c'était une nouvelle séance et qu'on annule, il faut la supprimer
-        // car on l'a insérée au début (.onAppear).
-        if isNew {
-            context.delete(session)
-        }
+        if isNew { context.delete(session) }
         dismiss()
     }
 }

@@ -44,12 +44,14 @@
 				Views/Calendar/CalendarView.swift,
 				Views/Exercises/ExerciseFormView.swift,
 				Views/Exercises/ExerciseListView.swift,
+				Views/Import/ImportView.swift,
 				Views/Sessions/ExerciseCardView.swift,
 				Views/Sessions/SerieCard.swift,
 				Views/Sessions/SessionDetailView.swift,
 				Views/Sessions/SessionExerciseRow.swift,
 				Views/Sessions/SessionFormView.swift,
 				Views/Sessions/SessionListView.swift,
+				Views/Sessions/TemplatesListView.swift,
 				"Views/View+SerieField.swift",
 			);
 			target = E0F8B4582EE89F74008758FD /* MyGymTracker */;
@@ -68,12 +70,14 @@
 				Views/Calendar/CalendarView.swift,
 				Views/Exercises/ExerciseFormView.swift,
 				Views/Exercises/ExerciseListView.swift,
+				Views/Import/ImportView.swift,
 				Views/Sessions/ExerciseCardView.swift,
 				Views/Sessions/SerieCard.swift,
 				Views/Sessions/SessionDetailView.swift,
 				Views/Sessions/SessionExerciseRow.swift,
 				Views/Sessions/SessionFormView.swift,
 				Views/Sessions/SessionListView.swift,
+				Views/Sessions/TemplatesListView.swift,
 				"Views/View+SerieField.swift",
 			);
 			target = E0F8B4712EE89F74008758FD /* MyGymTrackerUITests */;
